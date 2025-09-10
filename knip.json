@@ -1,0 +1,27 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "entry": [
+    "server/entry.ts",
+    "+photon.ts",
+    "+cloudflare.ts",
+    "cloudflare-entry.ts"
+  ],
+  "ignore": [
+    "*.spec.ts"
+  ],
+  "ignoreDependencies": [
+    "@batijs/tests-utils",
+    "turbo",
+    "photon",
+    "eslint",
+    "@biomejs/biome",
+    "@cloudflare/workers-types",
+    "wrangler"
+  ],
+  "rules": {
+    "types": "off",
+    "binaries": "off",
+    "exports": "off"
+  },
+  "vite": true
+}

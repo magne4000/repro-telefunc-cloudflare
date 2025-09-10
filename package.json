@@ -1,0 +1,45 @@
+{
+  "scripts": {
+    "dev": "vike dev",
+    "build": "vike build",
+    "preview": "vike preview",
+    "lint": "biome lint --write .",
+    "format": "biome format --write .",
+    "prod": "vike build && wrangler dev ./dist/server/index.js -c ./dist/server/wrangler.json",
+    "deploy": "vike build && wrangler deploy",
+    "test": "vitest run",
+    "knip": "VITE_CJS_IGNORE_WARNING=1 knip",
+    "lint:eslint": "eslint --max-warnings 0 .",
+    "lint:biome": "biome lint --error-on-warnings",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "vike": "^0.4.239",
+    "@photonjs/hono": "^0.0.8",
+    "hono": "^4.9.6",
+    "vike-photon": "0.1.0-commit-e9a401d",
+    "@universal-middleware/core": "^0.4.10",
+    "solid-js": "^1.9.9",
+    "vike-solid": "^0.7.12",
+    "telefunc": "^0.2.12",
+    "@photonjs/cloudflare": "^0.0.10"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2",
+    "vite": "^7.1.4",
+    "@biomejs/biome": "2.2.3",
+    "eslint": "^9.35.0",
+    "@eslint/js": "^9.35.0",
+    "typescript-eslint": "^8.42.0",
+    "globals": "^16.3.0",
+    "eslint-plugin-solid": "^0.14.5",
+    "@types/node": "^20.19.9",
+    "@cloudflare/workers-types": "^4.20250906.0",
+    "wrangler": "^4.34.0",
+    "vitest": "^3.2.4",
+    "knip": "^5.63.1",
+    "@batijs/tests-utils": "link:@batijs/tests-utils"
+  },
+  "type": "module",
+  "name": "solid--hono--telefunc--cloudflare--eslint--biome"
+}
