@@ -1,49 +1,18 @@
-Generated with [vike.dev/new](https://vike.dev/new) ([version 475](https://www.npmjs.com/package/create-vike/v/0.0.475)) using this command:
-
 ```sh
-pnpm create vike@latest --skip-git --solid --hono --telefunc --cloudflare --eslint --biome
+$ pnpm run dev
+
+Error: The following environment options are incompatible with the Cloudflare Vite plugin:
+        - "ssr" environment: `resolve.external`: ["telefunc"]
+To resolve this issue, avoid setting `resolve.external` in your Cloudflare Worker environments.
+
+    at validateWorkerEnvironmentOptions (file:///tmp/bati/node_modules/@cloudflare/vite-plugin/dist/index.js:17211:11)
+    at BasicMinimalPluginContext.configResolved (file:///tmp/bati/node_modules/@cloudflare/vite-plugin/dist/index.js:17343:11)
+    at file:///tmp/bati/node_modules/vite/dist/node/chunks/dep-M_KD0XSK.js:36396:87
+    at Array.map (<anonymous>)
+    at resolveConfig (file:///tmp/bati/node_modules/vite/dist/node/chunks/dep-M_KD0XSK.js:36396:68)
+    at assertViteRoot2 (file:///tmp/bati/node_modules/vike/dist/esm/node/api/prepareViteApiCall.js:160:32)
+    at resolveConfigs (file:///tmp/bati/node_modules/vike/dist/esm/node/api/prepareViteApiCall.js:34:36)
+    at Module.dev (file:///tmp/bati/node_modules/vike/dist/esm/node/api/dev.js:10:44)
+    at cmdDev (file:///tmp/bati/node_modules/vike/dist/esm/node/cli/entry.js:26:32)
+    at cli (file:///tmp/bati/node_modules/vike/dist/esm/node/cli/entry.js:11:9)
 ```
-
-## Contents
-
-* [`/pages/+config.ts`](#pagesconfigts)
-* [Routing](#routing)
-* [`/pages/_error/+Page.jsx`](#pages_errorpagejsx)
-* [`/pages/+onPageTransitionStart.ts` and `/pages/+onPageTransitionEnd.ts`](#pagesonpagetransitionstartts-and-pagesonpagetransitionendts)
-* [SSR](#ssr)
-* [HTML Streaming](#html-streaming)
-
-This app is ready to start. It's powered by [Vike](https://vike.dev) and [SolidJS](https://www.solidjs.com/guides/getting-started).
-
-### `/pages/+config.ts`
-
-Such `+` files are [the interface](https://vike.dev/config) between Vike and your code. It defines:
-
-* A default [`<Layout>` component](https://vike.dev/Layout) (that wraps your [`<Page>` components](https://vike.dev/Page)).
-* A default [`title`](https://vike.dev/title).
-* Global [`<head>` tags](https://vike.dev/head-tags).
-
-### Routing
-
-[Vike's built-in router](https://vike.dev/routing) lets you choose between:
-
-* [Filesystem Routing](https://vike.dev/filesystem-routing) (the URL of a page is determined based on where its `+Page.jsx` file is located on the filesystem)
-* [Route Strings](https://vike.dev/route-string)
-* [Route Functions](https://vike.dev/route-function)
-
-### `/pages/_error/+Page.jsx`
-
-The [error page](https://vike.dev/error-page) which is rendered when errors occur.
-
-### `/pages/+onPageTransitionStart.ts` and `/pages/+onPageTransitionEnd.ts`
-
-The [`onPageTransitionStart()` hook](https://vike.dev/onPageTransitionStart), together with [`onPageTransitionEnd()`](https://vike.dev/onPageTransitionEnd), enables you to implement page transition animations.
-
-### SSR
-
-SSR is enabled by default. You can [disable it](https://vike.dev/ssr) for all your pages or only for some pages.
-
-### HTML Streaming
-
-You can enable/disable [HTML streaming](https://vike.dev/stream) for all your pages, or only for some pages while still using it for others.
-
